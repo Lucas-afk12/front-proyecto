@@ -1,0 +1,85 @@
+<div class="container">
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <h4 style="text-align:center; font-size:20px">Empleados</h4>
+      <div class="input-group input-group-icon">
+        <input type="text" placeholder="Nombre" formControlName="Nombre" />
+        <div class="input-icon"><i class="bi bi-file-person-fill"></i></div>
+      </div>
+      <div class="input-group input-group-icon">
+        <input
+          type="email"
+          placeholder="Apellidos"
+          formControlName="Apellidos"
+        />
+        <div class="input-icon"><i class="bi bi-file-person-fill"></i></div>
+      </div>
+      <div class="input-group input-group-icon">
+        <input type="email" placeholder="Dni" formControlName="DNI" />
+        <div class="input-icon"><i class="bi bi-key-fill"></i></div>
+      </div>
+      <div class="input-group input-group-icon">
+        <input placeholder="Email" formControlName="Email" />
+        <div class="input-icon"><i class="bi bi-mailbox"></i></div>
+      </div>
+      <div class="input-group input-group-icon">
+        <input placeholder="Direccion" formControlName="Direccion" />
+        <div class="input-icon"><i class="bi bi-map-fill"></i></div>
+      </div>
+      <div class="input-group input-group-icon">
+        <input placeholder="telefono" formControlName="NumeroTlf" />
+        <div class="input-icon"><i class="bi bi-phone-fill"></i></div>
+      </div>
+      <div class="input-group input-group-icon">
+        <input placeholder="Sueldo" formControlName="Sueldo" />
+        <div class="input-icon"><i class="bi bi-phone-fill"></i></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-half">
+        <h4>AñosTrabajando</h4>
+        <div class="input-group">
+          <div class="col-third">
+            <input type="text" placeholder="DD" formControlName="dia" />
+          </div>
+          <div class="col-third">
+            <input type="text" placeholder="MM" formControlName="mes" />
+          </div>
+          <div class="col-third">
+            <input type="text" placeholder="YYYY" formControlName="año" />
+          </div>
+        </div>
+      </div>
+      <div class="col-half">
+        <h4>Gender</h4>
+        <div class="input-group">
+          <input
+            id="gender-male"
+            type="radio"
+            name="genre"
+            value="femenino"
+            formControlName="genre"
+          />
+          <label for="gender-male">Female</label>
+          <input
+            id="gender-female"
+            type="radio"
+            name="genre"
+            value="masculino"
+            formControlName="genre"
+          />
+          <label for="gender-female">Male</label>
+        </div>
+      </div>
+    </div>
+    <div class="boton">
+      <button
+        type="submit"
+        class="btn btn-primary btn-lg"
+        style="padding-left:40px;padding-right:40px;padding-botttom:40px;padding-top:10px"
+      >
+        <i class="bi bi-save"></i>
+      </button>
+    </div>
+  </form>
+</div>

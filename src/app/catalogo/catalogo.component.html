@@ -1,0 +1,59 @@
+<div class="empleados-container">
+    <app-navbar></app-navbar>
+    <h1 style="text-align:center;color:white; margin-top:2%;font-size:30px">
+      Catalogo  <i class="bi bi-wrench"></i>
+    </h1>
+    <div class="container">
+      <button type="button" class="btn btn-primary btn-lg"  (click)="openForm()" *ngIf="verificado">
+        Añadir Pelicula
+      </button>
+      <button type="button" class="btn btn-danger btn-lg" *ngIf="verificado" (click)="remove()">
+        Eliminar Pelicula
+      </button>
+    </div>
+   <div class="table-container">
+      <table class="table table-light table-hover table-bordered" *ngIf="verificado">
+        <thead class="table-dark">
+          <th>-</th>
+          <th>*</th>
+          <th>Titulo</th>
+          <th>Autor</th>
+          <th>Genero</th>
+          <th>Duracion</th>
+          <th>Año</th>
+          <th>Created_At</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pelicula of Peliculas">
+            <td>
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckChecked"
+                (click)="Container.push(pelicula)"
+              />
+            </td>
+            <td>{{ pelicula.ID }}</td>
+            <td>
+              {{ pelicula.titulo }}
+            </td>
+            <td>{{ pelicula.autor }}</td>
+            <td>{{pelicula.genero}}</td>
+            <td>{{ pelicula.duracion }}</td>
+            <td>{{ pelicula.ano  }}</td>
+            <td>{{  pelicula.Created }}</td>
+         </tr>
+       </tbody>
+      </table>
+    </div>
+    <form class="form-inline" id="miformulario" *ngIf="!verificado" [formGroup]="verifyCode">
+      <h1 style="color: white; text-align: center;">Introduzca el dni de algun empleado para continuar</h1>
+      <div class="input-group mb-2 mr-sm-2">                  
+         <input type="password" class="form-control" id="contraseña" placeholder="Contraseña" formControlName="Codigo" required style="text-align: center; ">
+      </div>
+      <button type="submit" class="btn btn-primary mb-2" (click) = "logIn()"> Aceptar</button>
+   </form>
+
+  </div>
+  

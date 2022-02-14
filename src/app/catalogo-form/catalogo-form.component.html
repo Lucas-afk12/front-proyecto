@@ -1,0 +1,55 @@
+<div class="container">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <h4 style="text-align:center; font-size:20px">Catalogo</h4>
+        <div class="input-group input-group-icon">
+          <input type="Titulo" placeholder="Titulo" formControlName="Titulo" />
+          <div class="input-icon"><i class="bi bi-file-person-fill"></i></div>
+        </div>
+        <div class="input-group input-group-icon">
+          <input
+            type="email"
+            placeholder="Autor"
+            formControlName="Autor"
+          />
+          <div class="input-icon"><i class="bi bi-file-person-fill"></i></div>
+        </div>
+        <div class="input-group input-group-icon">
+          <input type="email" placeholder="Genero" formControlName="Genero" />
+          <div class="input-icon"><i class="bi bi-key-fill"></i></div>
+        </div>
+        <div class="input-group input-group-icon">
+          <input placeholder="Duracion" formControlName="Duracion" />
+          <div class="input-icon"><i class="bi bi-mailbox"></i></div>
+        </div>
+        
+      </div>
+      <div class="row" style="display: flex;align-items: center; justify-content: center;">
+        <div class="col-half">
+          <h4>Fecha de salida</h4>
+          <div class="input-group">
+            <div class="col-third">
+              <input type="text" placeholder="DD" formControlName="dia" />
+            </div>
+            <div class="col-third">
+              <input type="text" placeholder="MM" formControlName="mes" />
+            </div>
+            <div class="col-third">
+              <input type="text" placeholder="YYYY" formControlName="año" />
+            </div>
+          </div>
+        </div>
+       
+      </div>
+      <div class="boton">
+        <button
+          type="submit"
+          class="btn btn-primary btn-lg"
+          style="padding-left:40px;padding-right:40px;padding-botttom:40px;padding-top:10px"
+        >
+          <i class="bi bi-save"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+  

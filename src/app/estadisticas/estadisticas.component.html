@@ -1,0 +1,11 @@
+<div class="empleados-container">
+    <app-navbar></app-navbar>
+    <highcharts-chart
+    [Highcharts] = "highcharts" 
+    [options] = "chartOptions" 
+    style = "width: 100%; height: 400px; display: block;"
+    [(update)]="updateFromInput">
+    
+    </highcharts-chart>
+  </div>
+  

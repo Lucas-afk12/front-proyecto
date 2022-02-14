@@ -1,0 +1,65 @@
+<div class="empleados-container">
+    <app-navbar></app-navbar>
+    <h1 style="text-align:center;color:white; margin-top:2%;font-size:30px">
+      Empleados  <i class="bi bi-wrench"></i>
+    </h1>
+    <div class="container">
+      <button type="button" class="btn btn-primary btn-lg"  (click)="openForm()" *ngIf="verificado">
+        Añadir Empleados
+      </button>
+      <button type="button" class="btn btn-danger btn-lg" *ngIf="verificado" (click)="remove()">
+        Eliminar Empleados
+      </button>
+    </div>
+    <div class="table-container">
+      <table class="table table-light table-hover table-bordered" *ngIf="verificado">
+        <thead class="table-dark">
+          <th>-</th>
+          <th>*</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Dni</th>
+          <th>Direccion</th>
+          <th>NumTelefono</th>
+          <th>Email</th>
+          <th>Sueldo</th>
+          <th>cantidadDeVentas</th>
+          <th>plus</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let empleado of empleados">
+            <td>
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckChecked"
+                (click)="Container.push(empleado)"
+              />
+            </td>
+            <td>{{ empleado.ID }}</td>
+            <td>
+              {{ empleado.personalInfo.Nombre }}
+            </td>
+            <td>{{ empleado.personalInfo.Apellidos }}</td>
+            <td>{{ empleado.personalInfo.DNI }}</td>
+            <td>{{ empleado.personalInfo.Direccion }}</td>
+            <td>{{ empleado.personalInfo.NumeroTlf }}</td>
+            <td>{{ empleado.personalInfo.Email }}</td>
+            <td>{{ empleado.jobInfo.sueldo }}</td>
+            <td>{{ empleado.count()}}</td>
+            <td> {{empleado.plus()}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <form class="form-inline" id="miformulario" *ngIf="!verificado" [formGroup]="verifyCode">
+      <h1 style="color: white; text-align: center;">Introduzca el dni de algun empleado para continuar</h1>
+      <div class="input-group mb-2 mr-sm-2">                  
+         <input type="password" class="form-control" id="contraseña" placeholder="Contraseña" formControlName="Codigo" required style="text-align: center; ">
+      </div>
+      <button type="submit" class="btn btn-primary mb-2" (click) = "logIn()"> Aceptar</button>
+   </form>
+
+  </div>
+  

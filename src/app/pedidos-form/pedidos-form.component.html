@@ -1,0 +1,54 @@
+<div class="container">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <h4 style="text-align:center; font-size:20px">Empleados</h4>
+
+        <div>
+            <p style="text-align: center;">Socio:</p>
+        
+        <select name="select" style="display:flex; justify-content: center;" formControlName="Socio">
+            <option *ngFor="let socio of Socios" 
+            [value]="socio.Socios_id" 
+            >
+          {{socio.personalInfo.Nombre}}
+        </option>
+        </select>
+        </div>
+        <div>
+            <p style="text-align: center;">Empleado:</p>
+        <select name="select" style="display:flex; justify-content: center;" formControlName="Empleado">
+            <option *ngFor="let empleado of Empleados" 
+            [value]="empleado.Empleado_id" 
+            >
+          {{empleado.personalInfo.Nombre}}
+        </option>
+        </select>
+        </div>
+
+        <div>
+            <p style="text-align: center;">Pelicula:</p>
+        <select name="select" style="display:flex; justify-content: center;" formControlName="Pelicula">
+            <option *ngFor="let pelicula of peliculas" 
+            [value]="pelicula.id" 
+            >
+          {{pelicula.Titulo}}
+        </option>
+        </select>
+        </div>
+        <div>
+            <p style="text-align: center;">Tiempo:</p>
+         <input type="number" placeholder="tiempo"  formControlName="Tiempo">
+        </div>
+      </div>
+      <div class="boton">
+        <button
+          type="submit"
+          class="btn btn-primary btn-lg"
+          style="padding-left:40px;padding-right:40px;padding-botttom:40px;padding-top:10px ; margin-top: 5%;"
+        >
+          <i class="bi bi-save"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+  
